@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="1496"
+   height="1496"
+   viewBox="0 0 1496 1496"
+   sodipodi:docname="heart-rate.eps"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     id="g8"
+     inkscape:groupmode="layer"
+     inkscape:label="ink_ext_XXXXXX"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,1496)">
+    <g
+       id="g10"
+       transform="scale(0.1)">
+      <path
+         d="M 11220,0 H 0 V 11220 H 11220 V 0"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path12" />
+      <path
+         d="M 7201.96,8969.05 C 6587.46,9023.11 5814.24,8668.94 5629.73,8102.36 5445.21,8668.94 4502.45,9017.61 3887.94,8963.55 2266.31,8820.91 1717.38,6868.09 2404.92,5554.86 c 370.05,-706.81 901.83,-1324.8 1482.01,-1879.71 485.84,-464.68 1738.98,-1450.24 1742.8,-1446.89 3.82,-3.35 1256.96,982.21 1742.8,1446.89 580.18,554.91 1111.95,1172.9 1482,1879.71 687.55,1313.23 -30.93,3271.55 -1652.57,3414.19"
+         style="fill:#c42156;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path14" />
+      <path
+         d="M 8512.25,5943.93 C 8087.61,5932.29 7662.97,5920.66 7238.34,5909.02 7084.67,6511.01 6931,7113 6777.33,7714.98 c -22.21,87.03 -141.96,80.5 -167.22,0 -328.75,-1047.87 -657.51,-2095.74 -986.27,-3143.62 -19.04,-60.69 -38.08,-121.38 -57.12,-182.08 -223.56,689.81 -447.12,1379.62 -670.67,2069.43 -35.85,110.63 -71.7,221.26 -107.56,331.89 -21.61,66.69 -123.52,93.14 -158.47,21.05 -162.5,-335.14 -325,-670.28 -487.5,-1005.41 -475.21,0 -950.42,0 -1425.62,0 -111.58,0 -111.77,-176.26 0,-176.26 493.1,0 986.21,0 1479.32,0 28.85,0 61.64,16.37 74.87,43.65 139.26,287.2 278.51,574.39 417.76,861.59 229.35,-707.69 458.71,-1415.38 688.06,-2123.07 35.85,-110.63 71.7,-221.26 107.56,-331.89 26.89,-82.99 140.76,-84.32 167.21,0 328.76,1047.87 657.51,2095.75 986.27,3143.62 15.73,50.13 31.46,100.25 47.18,150.38 134.33,-526.21 268.65,-1052.41 402.98,-1578.62 9.33,-36.55 46.12,-65.73 83.6,-64.7 446.85,12.24 893.69,24.48 1340.54,36.73 111.36,3.05 111.81,179.32 0,176.26"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path16" />
+    </g>
+  </g>
+</svg>

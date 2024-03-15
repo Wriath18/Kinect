@@ -105,7 +105,7 @@ def ask_about_drug(user_question):
         passage = f"{drug_name.capitalize()} is taken {drug_info[drug_name]}"
     else:
         try:
-            genai.configure(api_key='AIzaSyDlyEdausw88tQwGC7BOnF4AtmgfMOvsoA')  
+            genai.configure(api_key='APIKEY')  
             model = genai.GenerativeModel('gemini-pro')
             response = model.generate_content(user_question)
             passage = response.text

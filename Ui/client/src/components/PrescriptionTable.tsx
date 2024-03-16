@@ -8,44 +8,22 @@ const PrescriptionTable = () => {
   const { currentUser } = useSelector((state: any) => state.user);
   const [data, setData] = useState([]);
 
-  const columns = ["Medicine", "Frequency", "Time", "How"];
+  const columns = ["Medicine", "Frequency"];
 
-  // useEffect(() => {
-  //   const fetchPrescription = async () => {
-  //     if (currentUser) {
-  //       const formattedData = currentUser.medicine.map(
-  //         (medicine: any, index: any) => [
-  //           medicine,
-  //           `${currentUser.frequency[index]} / day` || "(N.A.)",
-  //           `${currentUser.time[index]} ${
-  //             currentUser.AM[index] === true ? "A.M" : "P.M."
-  //           }` || "(N.A.)",
-  //           currentUser.how[index] || "(N.A.)",
-  //         ]
-  //       );
-  //       const response = await axios.get(`/api/user/prescription/${currentUser.id}`);
-  //       setData(formattedData);
-  //   }
-  //   } else {
-  //     setData([]);
-  //   }
-  // }
   useEffect(() => {
     const fetchPrescription = async () => {
       try {
         if (currentUser) {
           const response = await axios.get(`/api/user/prescription/${currentUser._id}`);
           const data = response.data;
-          const { medicine, frequency, time, how, AM } = data;
+          const { medicine, frequency } = data;
           const fallbackString = "(N.A.)";
           console.log(data);
 
           const formattedData = medicine.map(
             (medicine: string, index: number) => [
-              medicine,
-              `${frequency[index]} / day` || fallbackString,
-              `${time[index]} ${AM[index] === true ? "A.M." : "P.M."}` || fallbackString,
-              how[index] || fallbackString,
+              medicine || fallbackString,
+              frequency[index] || fallbackString,
             ]
           );
 
@@ -89,12 +67,13 @@ const PrescriptionTable = () => {
             body: {
               padding: "15px",
               color: "#000",
+              fontSize: "16goopx",
             },
             footer: {},
           },
         },
       },
-    });
+  });
 
   return (
     <>

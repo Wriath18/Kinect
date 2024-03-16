@@ -7,39 +7,31 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-
-const data = [
-  {
-    name: "",
-    uv: 138,
-  },
-  {
-    name: "",
-    uv: 118,
-  },
-  {
-    name: "",
-    uv: 97,
-  },
-  {
-    name: "",
-    uv: 105,
-  },
-  {
-    name: "",
-    uv: 117,
-  },
-  {
-    name: "",
-    uv: 89,
-  },
-  {
-    name: "",
-    uv: 147,
-  },
-];
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const HeartRateChart = () => {
+  const [steps, setSteps] = useState([{}]);
+
+  useEffect(() => {
+    const fetchSteps = async () => {
+      try {
+        const response = await axios.get('https://v1.nocodeapi.com/wriath/fit/WrAfDcDMAPpXDHco/aggregatesDatasets?dataTypeName=steps_count,calories_expended&timePeriod=7days');
+        const data = response.data;
+        const { steps_count } = data;
+        setSteps(steps_count);
+      } catch (error: any) {
+        console.error("error fetching user stats:", error);
+      }
+    };
+
+    fetchSteps();
+  }, []);
+
+  const data = steps.map((step: any) => (
+    { name: "", uv: step["value"] }
+  ));
+
   return (
     <ResponsiveContainer width="100%" height={200}>
       <AreaChart

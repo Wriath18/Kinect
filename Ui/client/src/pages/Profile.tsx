@@ -1,5 +1,5 @@
 import { app } from "../firebase";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import {
   getDownloadURL,
@@ -8,7 +8,6 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import axios from "axios";
-import { useDispatch } from "react-redux";
 import {
   updateUserStart,
   updateUserSuccess,

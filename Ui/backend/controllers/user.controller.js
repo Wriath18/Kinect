@@ -62,16 +62,49 @@ export const upload = async (req, res, next) => {
   }
 };
 
-export const getPrescription = async (req, res, next) => {
+export const addContacts = async (req, res, next) => {
+  const { targetId, targetEmail } = req.body;
+  const currentUserId = req.params.id;
+
   try {
-    console.log('hi')
-    const user = await User.findById(req.params.id);
-    if (!user) {
-      return next(errorHandler(404, "User not found"));
+    const targetUser = await User.findOne({
+      _id: targetId,
+      email: targetEmail,
+    });
+    if (!targetUser) {
+      return res
+        .status(400)
+        .json({ message: "User not found, or email mismatch" });
     }
 
+    if (currentUserId === targetId) {
+      return res
+        .status(400)
+        .json({ message: "You cannot add yourself as a contact" });
+    }
+
+    const currentUser = await User.findById(currentUserId);
+    if (currentUser.contacts.includes(targetId)) {
+      return res
+        .status(400)
+        .json({ message: "target user is already in your contacts" });
+    }
+
+    currentUser.contacts.push(targetId);
+    await currentUser.save();
+
+    res.status(200).json({ message: "Contact added successfully!" });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getPrescription = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) return next(errorHandler(404, "User not found"));
+
     const { medicine, frequency, time, how, AM } = user;
-    console.log(user);
     res.status(200).json({ medicine, frequency, time, how, AM });
   } catch (error) {
     next(error);
@@ -85,6 +118,30 @@ export const deleteUser = async (req, res, next) => {
   try {
     await User.findByIdAndDelete(req.params.id);
     res.status(200).json("User has been deleted...");
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getContacts = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) return next(errorHandler(404, "user not found!"));
+
+    const { contacts } = user;
+    res.status(200).json({ contacts });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getUsername = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) return next(errorHandler(404, "user not found!"));
+
+    const { username, profilePicture } = user;
+    res.status(200).json({ username, profilePicture });
   } catch (error) {
     next(error);
   }

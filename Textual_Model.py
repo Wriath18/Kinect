@@ -55,7 +55,7 @@ def ask_about_drug_text():
         print(passage)
       else:
         try:
-          genai.configure(api_key='AIzaSyDlyEdausw88tQwGC7BOnF4AtmgfMOvsoA')
+          genai.configure(api_key='--')
           model = genai.GenerativeModel('gemini-pro')
           response = model.generate_content(user_question)
           passage = response.text
